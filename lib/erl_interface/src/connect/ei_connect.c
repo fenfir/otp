@@ -75,6 +75,10 @@
 #include <netdb.h>
 #include <sys/utsname.h>  /* for gen_challenge (NEED FIX?) */
 #include <time.h>
+
+#ifdef ANDROID
+#define gethostid() 0;
+#endif
 #endif
 
 /* common includes */

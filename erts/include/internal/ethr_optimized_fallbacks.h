@@ -35,7 +35,11 @@
 /* --- Optimized spinlocks using pthread spinlocks -------------------------- */
 #define ETHR_HAVE_OPTIMIZED_SPINLOCKS 1
 
+#ifdef ANDROID
+typedef pthread_mutex_t ethr_opt_spinlock_t;
+#else
 typedef pthread_spinlock_t ethr_opt_spinlock_t;
+#endif
 
 #if defined(ETHR_TRY_INLINE_FUNCS) || defined(ETHR_AUX_IMPL__)
 

@@ -44,6 +44,10 @@
 #include <unistd.h>
 #endif
 
+#ifdef ANDROID
+#include <asm/page.h>
+#endif
+
 #define ERTS_TS_EV_ALLOC_DEFAULT_POOL_SIZE 100
 #define ERTS_TS_EV_ALLOC_POOL_SIZE 25
 
